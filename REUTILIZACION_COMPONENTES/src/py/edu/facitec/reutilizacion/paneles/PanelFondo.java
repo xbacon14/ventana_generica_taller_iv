@@ -7,24 +7,21 @@ import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-public class MiPanel extends JPanel {
+public class PanelFondo extends JPanel {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -3371869322526752636L;
-	/**
-	 * 
-	 */
 	private Image fondo;
 
-	public MiPanel() {
+	public PanelFondo() {
 		setOpaque(false);
 	}
 
 	public void setFondo(String nombreFondo) {
 		try {
-			URL url = MiPanel.class.getResource("/img/" + nombreFondo);
+			URL url = PanelFondo.class.getResource("/img/" + nombreFondo);
 			fondo = new ImageIcon(url).getImage();
 			repaint();
 		} catch (Exception e) {
