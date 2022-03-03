@@ -1,10 +1,11 @@
 package py.edu.facitec.reutilizacion.toolbars;
 
-import javax.swing.JToolBar;
-import py.edu.facitec.reutilizacion.botones.MiBoton;
-import java.awt.event.ActionListener;
-import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JToolBar;
+
+import py.edu.facitec.reutilizacion.botones.MiBoton;
 
 public class MiToolbar extends JToolBar {
 	public MiToolbar() {

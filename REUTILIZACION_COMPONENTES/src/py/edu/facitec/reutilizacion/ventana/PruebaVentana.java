@@ -1,12 +1,11 @@
 package py.edu.facitec.reutilizacion.ventana;
 
-import javax.swing.JFrame;
-import py.edu.facitec.reutilizacion.botones.MiBoton;
 import java.awt.BorderLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import py.edu.facitec.reutilizacion.toolbars.MiToolbar;
+
+import javax.swing.JFrame;
+
 import py.edu.facitec.reutilizacion.paneles.MiPanel;
+import py.edu.facitec.reutilizacion.toolbars.MiToolbar;
 
 public class PruebaVentana extends JFrame {
 	public PruebaVentana() {
