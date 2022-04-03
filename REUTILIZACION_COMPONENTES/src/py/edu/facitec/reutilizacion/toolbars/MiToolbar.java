@@ -5,55 +5,80 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JToolBar;
 
-import py.edu.facitec.reutilizacion.botones.MiBoton;
+import py.edu.facitec.reutilizacion.botomes.MiBoton;
+import py.edu.facitec.reutilizacion.interfaces.AccionesABM;
 
-public class MiToolbar extends JToolBar {
-	public MiToolbar() {
+public class MiToolbar extends JToolBar implements ActionListener {
+	private MiBoton mbtnNuevo;
+	private MiBoton mbtnModificar;
+	private MiBoton mbtnEliminar;
+	
+	private MiBoton mbtnCancelar;
+	private MiBoton mbtnGuardar;
 
-		MiBoton mbtnHamburguesa = new MiBoton();
-		mbtnHamburguesa.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("hamburguesa");
-			}
-		});
-		mbtnHamburguesa.setText("Hamburguesa");
-		mbtnHamburguesa.setNombreIcono("hamburguesa");
-		add(mbtnHamburguesa);
+	private AccionesABM acciones;
 
-		MiBoton mbtnCohete = new MiBoton();
-		mbtnCohete.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("cohete");
-			}
-		});
-		mbtnCohete.setText("Cohete");
-		mbtnCohete.setNombreIcono("cohete");
-		add(mbtnCohete);
-
-		MiBoton btnBolsa = new MiBoton();
-		btnBolsa.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-
-		btnBolsa.setText("Bolsa");
-		btnBolsa.setNombreIcono("bolsa");
-		add(btnBolsa);
-
-		MiBoton btnControl = new MiBoton();
-		btnControl.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-			}
-		});
-		btnControl.setNombreIcono("control");
-		btnControl.setText("Control");
-		add(btnControl);
+	public void setAcciones(AccionesABM acciones) {
+		this.acciones = acciones;
 	}
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7816236679911597815L;
+	public MiToolbar() {
+		setFloatable(false);
+
+		mbtnNuevo = new MiBoton();
+		mbtnNuevo.setText("Nuevo");
+		add(mbtnNuevo);
+
+		mbtnModificar = new MiBoton();
+		mbtnModificar.setText("Modificar");
+		add(mbtnModificar);
+
+		mbtnEliminar = new MiBoton();
+		mbtnEliminar.setText("Eliminar");
+		add(mbtnEliminar);
+		
+		mbtnGuardar = new MiBoton();
+		mbtnGuardar.setText("Guardar");
+		add(mbtnGuardar);
+		
+		mbtnCancelar = new MiBoton();
+		mbtnCancelar.setText("Cancelar");
+		add(mbtnCancelar);
+
+		setUpEvents();
+		
+		
+	}// final del constructor
+
+	private void setUpEvents() {
+		mbtnNuevo.addActionListener(this);
+		mbtnModificar.addActionListener(this);
+		mbtnEliminar.addActionListener(this);
+		mbtnGuardar.addActionListener(this);
+		mbtnCancelar.addActionListener(this);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		switch (e.getActionCommand()) {
+		case "Nuevo":
+			acciones.nuevo();
+			break;
+		case "Modificar":
+			acciones.modificar();
+			break;
+		case "Eliminar":
+			acciones.eliminar();
+			break;
+		case "Guardar":
+			acciones.guardar();
+			break;
+		case "Cancelar":
+			acciones.cancelar();
+			break;
+		default:
+			break;
+		}
+	}
 
 }

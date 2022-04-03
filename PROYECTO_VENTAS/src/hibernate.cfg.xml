@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration>
+<hibernate-configuration>
+	<session-factory>
+	
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.PostgreSQLDialect
+		</property>
+        <property name="hibernate.connection.driver_class">
+        	org.postgresql.Driver
+        </property>
+        <property name="hibernate.connection.url">
+        	jdbc:postgresql://localhost:5432/proyecto_ventas_db
+        </property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">postgres</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <!-- Sirve para mostrar en consola las sentencias -->
+        <property name="show_sql">true</property>
+        <!-- Sirve para generar automaticamente la estructura de la bd -->
+        <property name="hbm2ddl.auto">update</property>
+        
+        
+        <mapping class="py.edu.facitec.proyecto_ventas.modelo.entidades.Categoria"></mapping>
+        <mapping class="py.edu.facitec.proyecto_ventas.modelo.entidades.Cliente"></mapping>
+        <mapping class="py.edu.facitec.proyecto_ventas.modelo.entidades.Persona"></mapping>
+        <mapping class="py.edu.facitec.proyecto_ventas.modelo.entidades.Producto"></mapping>
+        <mapping class="py.edu.facitec.proyecto_ventas.modelo.entidades.Vendedor"></mapping>
+        <mapping class="py.edu.facitec.proyecto_ventas.modelo.entidades.Venta"></mapping>
+        <mapping class="py.edu.facitec.proyecto_ventas.modelo.entidades.VentaDetalle"></mapping>
+   
+       	
+	</session-factory>
+</hibernate-configuration>
