@@ -9,29 +9,37 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name="categorias")
+@Table(name = "categorias")
 public class Categoria {
 	@Id
-	@GenericGenerator(name="increment", strategy="increment")
-	@GeneratedValue(generator="increment")
+	@GenericGenerator(name = "increment", strategy = "increment")
+	@GeneratedValue(generator = "increment")
 	private int id;
-	@Column(nullable=false, unique=true)
+	@Column(nullable = false, unique = true)
 	private String descripcion;
-	
-	
-	
+
+	public Categoria() {
+		super();
+	}
+
+	public Categoria(int l) {
+		this.id = l;
+	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getDescripcion() {
 		return descripcion;
 	}
+
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	
 
 }

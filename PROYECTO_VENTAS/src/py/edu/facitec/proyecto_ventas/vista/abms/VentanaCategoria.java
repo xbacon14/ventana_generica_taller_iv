@@ -10,6 +10,10 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class VentanaCategoria extends VentanaGenerica {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2728464113050111214L;
 	private JTextField textField;
 
 	/**
@@ -39,7 +43,7 @@ public class VentanaCategoria extends VentanaGenerica {
 	 */
 	public VentanaCategoria() {
 		
-		JLabel lblDescripcin = new JLabel("DescripciÃ³n");
+		JLabel lblDescripcin = new JLabel("Descripció	n");
 		lblDescripcin.setBounds(12, 36, 94, 15);
 		getPanelFormulario().add(lblDescripcin);
 		
