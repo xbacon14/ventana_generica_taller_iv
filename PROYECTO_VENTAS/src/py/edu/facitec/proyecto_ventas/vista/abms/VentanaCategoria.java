@@ -14,7 +14,7 @@ public class VentanaCategoria extends VentanaGenerica {
 	 * 
 	 */
 	private static final long serialVersionUID = -2728464113050111214L;
-	private JTextField textField;
+	private JTextField tDescripcion;
 
 	/**
 	 * Launch the application.
@@ -23,17 +23,17 @@ public class VentanaCategoria extends VentanaGenerica {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VentanaCategoria dialog = new VentanaCategoria();//se instancia la ventana
-					dialog.setUpController();//se instancia el controlador de la ventan
+					VentanaCategoria dialog = new VentanaCategoria();
+					dialog.setUpController();
 					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-					dialog.setVisible(true);//se visulaiza la ventana
+					dialog.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
 	}
-	
+
 	public void setUpController() {
 		new VentanaCategoriaController(this);
 	}
@@ -42,27 +42,35 @@ public class VentanaCategoria extends VentanaGenerica {
 	 * Create the dialog.
 	 */
 	public VentanaCategoria() {
-		
+
 		JLabel lblDescripcin = new JLabel("Descripci�	n");
 		lblDescripcin.setBounds(12, 36, 94, 15);
 		getPanelFormulario().add(lblDescripcin);
-		
-		textField = new JTextField();
-		textField.setBounds(109, 36, 272, 19);
-		getPanelFormulario().add(textField);
-		textField.setColumns(10);
-		//setBounds(100, 100, 450, 300);
+
+		tDescripcion = new JTextField();
+		tDescripcion.setBounds(109, 36, 272, 19);
+		getPanelFormulario().add(tDescripcion);
+		tDescripcion.setColumns(10);
+		// setBounds(100, 100, 450, 300);
 
 	}
 
 	@Override
 	protected String getTitulo() {
-		return "Registro de categorías";
+		return "Registro de categorias";
+	}
+
+	public JTextField gettDescripcion() {
+		return tDescripcion;
+	}
+
+	public void settDescripcion(JTextField tDescripcion) {
+		this.tDescripcion = tDescripcion;
 	}
 
 	@Override
 	protected String getTituloFormulario() {
-		return "Datos de la categoría";
+		return "Datos de la categorias";
 	}
 
 }

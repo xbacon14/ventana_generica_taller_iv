@@ -12,9 +12,10 @@ public class MiToolbar extends JToolBar implements ActionListener {
 	private MiBoton mbtnNuevo;
 	private MiBoton mbtnModificar;
 	private MiBoton mbtnEliminar;
-	
+
 	private MiBoton mbtnCancelar;
 	private MiBoton mbtnGuardar;
+	private MiBoton mbtnSalir;
 
 	private AccionesABM acciones;
 
@@ -36,18 +37,21 @@ public class MiToolbar extends JToolBar implements ActionListener {
 		mbtnEliminar = new MiBoton();
 		mbtnEliminar.setText("Eliminar");
 		add(mbtnEliminar);
-		
+
 		mbtnGuardar = new MiBoton();
 		mbtnGuardar.setText("Guardar");
 		add(mbtnGuardar);
-		
+
 		mbtnCancelar = new MiBoton();
 		mbtnCancelar.setText("Cancelar");
 		add(mbtnCancelar);
 
+		mbtnSalir = new MiBoton();
+		mbtnSalir.setText("Salir");
+		add(mbtnSalir);
+
 		setUpEvents();
-		
-		
+
 	}// final del constructor
 
 	private void setUpEvents() {
@@ -56,6 +60,16 @@ public class MiToolbar extends JToolBar implements ActionListener {
 		mbtnEliminar.addActionListener(this);
 		mbtnGuardar.addActionListener(this);
 		mbtnCancelar.addActionListener(this);
+		mbtnSalir.addActionListener(this);
+	}
+
+	public void estadoInicial(boolean esInicial) {
+		mbtnNuevo.setEnabled(esInicial);
+		mbtnModificar.setEnabled(esInicial);
+		mbtnEliminar.setEnabled(esInicial);
+
+		mbtnGuardar.setEnabled(!esInicial);
+		mbtnCancelar.setEnabled(!esInicial);
 	}
 
 	@Override
@@ -76,6 +90,8 @@ public class MiToolbar extends JToolBar implements ActionListener {
 		case "Cancelar":
 			acciones.cancelar();
 			break;
+		case "Salir":
+			acciones.salir();
 		default:
 			break;
 		}

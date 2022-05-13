@@ -29,12 +29,12 @@ public abstract class GenericDAO<T> {
 		}
 	}
 
-	protected void commit() {
+	public void commit() {
 		getSession().flush();
 		getSession().getTransaction().commit();
 	}
 
-	protected void rollback() {
+	public void rollback() {
 		getSession().getTransaction().rollback();
 	}
 
