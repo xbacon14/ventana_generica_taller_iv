@@ -112,4 +112,34 @@ public class VentanaCliente extends VentanaGenerica {
 		return "Datos del cliente";
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public JTextField gettNombre() {
+		return tNombre;
+	}
+
+	public JTextField gettApellido() {
+		return tApellido;
+	}
+
+	public JTextField gettDocumento() {
+		return tDocumento;
+	}
+
+	public JTextField gettTelefono() {
+		return tTelefono;
+	}
+
+	public JTextField gettEmail() {
+		return tEmail;
+	}
+
+	public JTextField gettFechaRegistro() {
+		return tFechaRegistro;
+	}
+	
+	
+
 }

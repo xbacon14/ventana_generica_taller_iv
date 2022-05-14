@@ -18,6 +18,11 @@ public class ModeloTablaCliente extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 5580260137703896704L;
 
+	public void setLista(List<Cliente> lista) {
+		this.lista = lista;
+		fireTableDataChanged();
+	}
+
 	@Override
 	public int getColumnCount() {
 		return columnas.length;
