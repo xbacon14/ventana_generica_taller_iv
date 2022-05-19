@@ -36,6 +36,13 @@ public class VentanaClienteController implements AccionesABM, MouseListener {
 		dao = new ClienteDAO();
 		mtCliente = new ModeloTablaCliente();
 		this.vCliente.getTable().setModel(mtCliente);
+
+		recuperarTodo();
+		setUpEvents();
+	}
+
+	private void setUpEvents() {
+		vCliente.getTable().addMouseListener(this);
 	}
 
 	private void estadoInicial(boolean esInicial) {
